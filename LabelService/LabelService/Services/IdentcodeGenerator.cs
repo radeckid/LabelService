@@ -13,7 +13,7 @@ namespace LabelService.Services
         {
             _current++;
 
-            return _current.ToString().PadLeft(12, '0');
+            return _current.ToString();
         }
     }
 }

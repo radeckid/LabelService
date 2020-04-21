@@ -7,7 +7,10 @@ namespace LabelService.Helpers
     {
         private LabelDTO _label;
 
-        public LabelDataProvider(LabelDTO label)
+        public LabelDataProvider()
+        {}
+
+        public void Inicialize(LabelDTO label)
         {
             _label = label;
         }
@@ -16,7 +19,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return string.Concat(_label.SenderZip, " ", _label.SenderCity);
+                return ConnectStringWithSpace(_label.SenderZip, _label.SenderCity);
             }
         }
 
@@ -24,7 +27,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return string.Concat(_label.SenderStreet, " ", _label.SenderHomeNo);
+                return ConnectStringWithSpace(_label.SenderStreet, _label.SenderHomeNo);
             }
         }
 
@@ -37,7 +40,7 @@ namespace LabelService.Helpers
                     return _label.SenderCompany;
                 }
 
-                return string.Concat(_label.SenderName, " ", _label.SenderSurname);
+                return ConnectStringWithSpace(_label.SenderName, _label.SenderSurname);
             }
         }
 
@@ -45,7 +48,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return string.Concat(_label.ReceiverZip, " ", _label.ReceiverCity);
+                return ConnectStringWithSpace(_label.ReceiverZip, _label.ReceiverCity);
             }
         }
 
@@ -53,7 +56,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return string.Concat(_label.ReceiverStreet, " ", _label.ReceiverHomeNo);
+                return ConnectStringWithSpace(_label.ReceiverStreet, _label.ReceiverHomeNo);
             }
         }
 
@@ -66,7 +69,7 @@ namespace LabelService.Helpers
                     return _label.ReceiverCompany;
                 }
 
-                return string.Concat(_label.ReceiverName, " ", _label.ReceiverSurname);
+                return ConnectStringWithSpace(_label.ReceiverName, _label.ReceiverSurname);
             }
         }
 
@@ -74,7 +77,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return _label.ReceiverMobile.IsNullOrWhiteSpace() ? _label.ReceiverEmail : _label.ReceiverMobile;
+                return _label.ReceiverMobile.IsNullOrWhiteSpace() ? _label.ReceiverEmail.IsNullOrWhiteSpace() ? string.Empty : _label.ReceiverEmail : _label.ReceiverMobile;
             }
         }
 
@@ -90,7 +93,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return string.Concat("Price: ", _label.Price, " ", _label.Currency);
+                return string.Concat("Price: ", ConnectStringWithSpace(_label.Price, _label.Currency));
             }
         }
 
@@ -98,8 +101,32 @@ namespace LabelService.Helpers
         {
             get
             {
+                if(_label.Weight.IsNullOrWhiteSpace())
+                {
+                    _label.Weight = "0";
+                }
                 return string.Concat("Weight: ", _label.Weight, " kg");
             }
+        }
+
+        private string ConnectStringWithSpace(string first, string second)
+        {
+            if (first.IsNullOrWhiteSpace())
+            {
+                if (second.IsNullOrWhiteSpace())
+                {
+                    return string.Empty;
+                }
+
+                return second;
+            }
+
+            if (second.IsNullOrWhiteSpace())
+            {
+                return first;
+            }
+
+            return string.Concat(first, " ", second);
         }
     }
 }

@@ -11,10 +11,10 @@ namespace LabelService.Extensions
         {
             if(text == null || text.Trim().Length == 0)
             {
-                return false;
+                return true;
             }
 
-            return true;
+            return false;
         }
     }
 }

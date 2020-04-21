@@ -10,9 +10,17 @@ namespace LabelService.Services
 {
     public class LabelGenerator : ILabelGenerator
     {
+        private LabelDataProvider _provider;
+
+        public LabelGenerator()
+        {
+            _provider = new LabelDataProvider();
+        }
+
         public string Generate(LabelDTO label, string identcode)
         {
-            var provider = new LabelDataProvider(label);
+            identcode = identcode.PadLeft(12, '0');
+            _provider.Inicialize(label);
             var image = new Bitmap(400, 640);
             using (var graphic = Graphics.FromImage(image))
             {
@@ -23,18 +31,18 @@ namespace LabelService.Services
 
                 graphic.Clear(Color.White);
 
-                graphic.DrawString(provider.GetSenderCompanyNameOrName, fontRegular, brushBlack, 20, 20);
-                graphic.DrawString(provider.GetSenderStreetHomeNo, fontRegular, brushBlack, 20, 60);
-                graphic.DrawString(provider.GetSenderZipCity, fontRegular, brushBlack, 20, 80);
+                graphic.DrawString(_provider.GetSenderCompanyNameOrName, fontRegular, brushBlack, 20, 20);
+                graphic.DrawString(_provider.GetSenderStreetHomeNo, fontRegular, brushBlack, 20, 60);
+                graphic.DrawString(_provider.GetSenderZipCity, fontRegular, brushBlack, 20, 80);
 
-                graphic.DrawString(provider.GetReceiverCompanyNameOrName, fontHeader, brushBlack, 60, 190);
-                graphic.DrawString(provider.GetReceiverStreetHomeNo, fontRegular, brushBlack, 60, 230);
-                graphic.DrawString(provider.GetReceiverZipCity, fontRegular, brushBlack, 60, 250);
-                graphic.DrawString(provider.GetReceiverAnyContact, fontRegular, brushBlack, 60, 270);
+                graphic.DrawString(_provider.GetReceiverCompanyNameOrName, fontHeader, brushBlack, 60, 190);
+                graphic.DrawString(_provider.GetReceiverStreetHomeNo, fontRegular, brushBlack, 60, 230);
+                graphic.DrawString(_provider.GetReceiverZipCity, fontRegular, brushBlack, 60, 250);
+                graphic.DrawString(_provider.GetReceiverAnyContact, fontRegular, brushBlack, 60, 270);
 
-                graphic.DrawString(provider.GetDeliveryInstruction, fontRegular, brushBlack, 20, 360);
-                graphic.DrawString(provider.GetPrice, fontRegular, brushBlack, 20, 380);
-                graphic.DrawString(provider.GetWeight, fontRegular, brushBlack, 20, 400);
+                graphic.DrawString(_provider.GetDeliveryInstruction, fontRegular, brushBlack, 20, 360);
+                graphic.DrawString(_provider.GetPrice, fontRegular, brushBlack, 20, 380);
+                graphic.DrawString(_provider.GetWeight, fontRegular, brushBlack, 20, 400);
 
                 BarcodeLib.Barcode b = new BarcodeLib.Barcode();
                 Image img = b.Encode(BarcodeLib.TYPE.UPCA, identcode, Color.Black, Color.White, 200, 50);
