@@ -99,7 +99,7 @@
           "400" : {
             "description" : "invalid input, object invalid"
           },
-          "409" : {
+          "410" : {
             "description" : "an deleted label already deleted"
           }
         }
