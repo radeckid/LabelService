@@ -1,5 +1,6 @@
 ﻿using LabelService.DTO;
 using LabelService.Helpers;
+using LabelService.Models;
 using NUnit.Framework;
 
 namespace LabelServiceTests
@@ -8,7 +9,7 @@ namespace LabelServiceTests
     class LabelDataProviderTests
     {
         LabelDataProvider _provider;
-        LabelDTO _label;
+        Label _label;
 
         [SetUp]
         public void SetUp()

@@ -6,7 +6,7 @@ namespace LabelServiceTests
     [TestFixture]
     public class IdentcodeGeneratorTests
     {
-        IdentcodeGenerator _generator;
+        private IdentcodeGenerator _generator;
         [SetUp]
         public void Setup()
         {

@@ -1,10 +1,11 @@
 ﻿
 using LabelService.DTO;
+using LabelService.Models;
 
 namespace LabelService.Services
 {
     public interface ILabelGenerator
     {
-        string Generate(LabelDTO label, string identcode);
+        string Generate(Label label, string identcode);
     }
 }

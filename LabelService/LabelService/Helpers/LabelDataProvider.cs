@@ -1,16 +1,17 @@
 ﻿using LabelService.DTO;
 using LabelService.Extensions;
+using LabelService.Models;
 
 namespace LabelService.Helpers
 {
     public class LabelDataProvider
     {
-        private LabelDTO _label;
+        private Label _label;
 
         public LabelDataProvider()
         {}
 
-        public void Inicialize(LabelDTO label)
+        public void Inicialize(Label label)
         {
             _label = label;
         }
