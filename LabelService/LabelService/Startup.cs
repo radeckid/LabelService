@@ -23,6 +23,7 @@ namespace LabelService
         {
             services.AddSingleton<IIdentcodeGenerator, IdentcodeGenerator>();
             services.AddScoped<ILabelGenerator, LabelGenerator>();
+            services.AddScoped<ILabelRepository, LabelRepository>();
             services.AddDbContext<DataContext>(option => option.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddCors(options =>
             {

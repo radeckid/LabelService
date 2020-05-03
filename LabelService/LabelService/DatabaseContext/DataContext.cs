@@ -7,6 +7,8 @@ namespace LabelService.DatabaseContext
     {
         public DbSet<Label> Labels { get; set; }
 
+        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);

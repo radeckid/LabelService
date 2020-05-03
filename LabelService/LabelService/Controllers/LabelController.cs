@@ -83,7 +83,7 @@ namespace LabelService.Controllers
             return Ok(labelBase64);
         }
 
-        [HttpPost("/label")]
+        [HttpPost("label")]
         public async Task<IActionResult> CreateLabel(LabelDTO label)
         {
             if (!ModelState.IsValid)
