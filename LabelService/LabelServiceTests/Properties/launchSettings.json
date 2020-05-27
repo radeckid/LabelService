@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LabelServiceTests": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

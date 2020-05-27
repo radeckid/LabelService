@@ -6,6 +6,6 @@ namespace LabelService.Services
 {
     public interface ILabelGenerator
     {
-        string Generate(Label label, string identcode);
+        string Generate(Label label);
     }
 }

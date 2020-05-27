@@ -1,48 +1,22 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LabelService.Models
 {
-    public class Label
+    public class Label : BaseLabel<Address, Features>
     {
-        [Key] public int LabelId { get; set; }
+        public int LabelId { get; set; }
 
-        public string SenderCompany { get; set; }
+        [ForeignKey("Sender")]
+        public int SenderId { get; set; }
 
-        [Required] public string SenderName { get; set; }
+        [ForeignKey("Receiver")]
+        public int ReceiverId { get; set; }
 
-        public string SenderSurname { get; set; }
+        [ForeignKey("Features")]
+        public int FeaturesId { get; set; }
 
-        [Required] public string SenderStreet { get; set; }
+        public string Identcode { get; set; }
 
-        [Required] public string SenderHomeNo { get; set; }
-
-        [Required] public string SenderZip { get; set; }
-
-        [Required] public string SenderCity { get; set; }
-
-
-        public string ReceiverCompany { get; set; }
-
-        [Required] public string ReceiverName { get; set; }
-
-        public string ReceiverSurname { get; set; }
-
-        [Required] public string ReceiverStreet { get; set; }
-
-        [Required] public string ReceiverHomeNo { get; set; }
-
-        [Required] public string ReceiverZip { get; set; }
-
-        [Required] public string ReceiverCity { get; set; }
-
-        public string ReceiverMobile { get; set; }
-
-        public string ReceiverEmail { get; set; }
-
-
-        public string DeliveryIns { get; set; }
-        [Required] public string Price { get; set; }
-        [Required] public string Currency { get; set; }
-        [Required] public string Weight { get; set; }
+        public string Base64 { get; set; }
     }
 }

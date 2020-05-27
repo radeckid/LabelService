@@ -1,12 +1,13 @@
 ﻿using System.Threading.Tasks;
+using LabelService.DTO;
 using LabelService.Models;
 
 namespace LabelService.DatabaseContext
 {
     public interface ILabelRepository
     {
-        Task<bool> CreateLabel(Label label);
-        Task<bool> DeleteLabel(Label label);
-        Task<Label> GetLabel(int id);
+        Task<Label> CreateLabel(LabelDTO label);
+        Task<bool> DeleteLabel(string identifier);
+        Task<Label> GetLabel(string id);
     }
 }

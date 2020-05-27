@@ -1,5 +1,4 @@
-﻿using LabelService.DTO;
-using LabelService.Extensions;
+﻿using LabelService.Extensions;
 using LabelService.Models;
 
 namespace LabelService.Helpers
@@ -20,7 +19,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return ConnectStringWithSpace(_label.SenderZip, _label.SenderCity);
+                return ConnectStringWithSpace(_label.Sender.Zip, _label.Sender.City);
             }
         }
 
@@ -28,7 +27,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return ConnectStringWithSpace(_label.SenderStreet, _label.SenderHomeNo);
+                return ConnectStringWithSpace(_label.Sender.Street, _label.Sender.HomeNo);
             }
         }
 
@@ -36,12 +35,12 @@ namespace LabelService.Helpers
         {
             get
             {
-                if (!_label.SenderCompany.IsNullOrWhiteSpace())
+                if (!_label.Sender.Company.IsNullOrWhiteSpace())
                 {
-                    return _label.SenderCompany;
+                    return _label.Sender.Company;
                 }
 
-                return ConnectStringWithSpace(_label.SenderName, _label.SenderSurname);
+                return ConnectStringWithSpace(_label.Sender.Name, _label.Sender.Surname);
             }
         }
 
@@ -49,7 +48,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return ConnectStringWithSpace(_label.ReceiverZip, _label.ReceiverCity);
+                return ConnectStringWithSpace(_label.Receiver.Zip, _label.Receiver.City);
             }
         }
 
@@ -57,7 +56,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return ConnectStringWithSpace(_label.ReceiverStreet, _label.ReceiverHomeNo);
+                return ConnectStringWithSpace(_label.Receiver.Street, _label.Receiver.HomeNo);
             }
         }
 
@@ -65,12 +64,12 @@ namespace LabelService.Helpers
         {
             get
             {
-                if (!_label.ReceiverCompany.IsNullOrWhiteSpace())
+                if (!_label.Receiver.Company.IsNullOrWhiteSpace())
                 {
-                    return _label.ReceiverCompany;
+                    return _label.Receiver.Company;
                 }
 
-                return ConnectStringWithSpace(_label.ReceiverName, _label.ReceiverSurname);
+                return ConnectStringWithSpace(_label.Receiver.Name, _label.Receiver.Surname);
             }
         }
 
@@ -78,7 +77,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return _label.ReceiverMobile.IsNullOrWhiteSpace() ? _label.ReceiverEmail.IsNullOrWhiteSpace() ? string.Empty : _label.ReceiverEmail : _label.ReceiverMobile;
+                return _label.Receiver.Mobile.IsNullOrWhiteSpace() ? _label.Receiver.Email.IsNullOrWhiteSpace() ? string.Empty : _label.Receiver.Email : _label.Receiver.Mobile;
             }
         }
 
@@ -86,7 +85,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return string.Concat("Delivery instruction: ", _label.DeliveryIns ?? string.Empty);
+                return string.Concat("Delivery instruction: ", _label.Features.DeliveryIns ?? string.Empty);
             }
         }
 
@@ -94,7 +93,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return string.Concat("Price: ", ConnectStringWithSpace(_label.Price, _label.Currency));
+                return string.Concat("Price: ", ConnectStringWithSpace(_label.Features.Price, _label.Features.Currency));
             }
         }
 
@@ -102,11 +101,11 @@ namespace LabelService.Helpers
         {
             get
             {
-                if(_label.Weight.IsNullOrWhiteSpace())
+                if(_label.Features.Weight.IsNullOrWhiteSpace())
                 {
-                    _label.Weight = "0";
+                    _label.Features.Weight = "0";
                 }
-                return string.Concat("Weight: ", _label.Weight, " kg");
+                return string.Concat("Weight: ", _label.Features.Weight, " kg");
             }
         }
 

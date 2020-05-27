@@ -30,26 +30,6 @@ namespace LabelServiceTests
         {
             return new Label
             {
-                SenderCompany = senderCompany,
-                SenderName = senderName,
-                SenderSurname = senderSurname,
-                SenderStreet = senderStreet,
-                SenderHomeNo = senderHomeNo,
-                SenderZip = senderZip,
-                SenderCity = senderCity,
-                ReceiverCompany = receiverCompany,
-                ReceiverName = receiverName,
-                ReceiverSurname = receiverSurname,
-                ReceiverStreet = receiverStreet,
-                ReceiverHomeNo = receiverHomeNo,
-                ReceiverZip = receiverZip,
-                ReceiverCity = receiverCity,
-                ReceiverEmail = receiverEmail,
-                ReceiverMobile = receiverMobile,
-                DeliveryIns = deliveryIns,
-                Price = price,
-                Currency = currency,
-                Weight = weight
             };
         }
     }

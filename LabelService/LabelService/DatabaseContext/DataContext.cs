@@ -17,6 +17,14 @@ namespace LabelService.DatabaseContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Label>()
+                .HasOne(o => o.Sender)
+                .WithOne(p => p.SenderLabel);
+
+            modelBuilder.Entity<Label>()
+                .HasOne(o => o.Receiver)
+                .WithOne(p => p.ReceiverLabel);
         }
     }
 }

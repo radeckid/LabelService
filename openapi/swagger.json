@@ -119,60 +119,75 @@
             "type" : "string",
             "format" : "date-time"
           },
-          "senderCompany" : {
-            "type" : "string"
-          },
-          "senderName" : {
-            "type" : "string"
-          },
-          "senderSurname" : {
-            "type" : "string"
-          },
-          "senderStreet" : {
-            "type" : "string"
-          },
-          "senderHomeNo" : {
-            "type" : "string"
-          },
-          "senderZip" : {
-            "type" : "string"
-          },
-          "senderCity" : {
-            "type" : "string"
-          },
-          "receiverCompany" : {
-            "type" : "string"
-          },
-          "receiverName" : {
-            "type" : "string"
-          },
-          "receiverSurname" : {
-            "type" : "string"
-          },
-          "receiverStreet" : {
-            "type" : "string"
-          },
-          "receiverHomeNo" : {
-            "type" : "string"
-          },
-          "receiverZip" : {
-            "type" : "string"
-          },
-          "receiverCity" : {
-            "type" : "string"
-          },
-          "deliveryIns" : {
-            "type" : "string"
-          },
-          "price" : {
-            "type" : "string"
-          },
-          "currency" : {
-            "type" : "string"
-          },
-          "weight" : {
-            "type" : "string"
-          }
+		  "Sender": {
+			"type": "object",
+			"properties": {
+					"Company" : {
+					"type" : "string"
+				  },
+				  "Name" : {
+					"type" : "string"
+				  },
+				  "Surname" : {
+					"type" : "string"
+				  },
+				  "Street" : {
+					"type" : "string"
+				  },
+				  "HomeNo" : {
+					"type" : "string"
+				  },
+				  "Zip" : {
+					"type" : "string"
+				  },
+				  "City" : {
+					"type" : "string"
+				  }
+			  }
+			},
+			"Receiver": {
+				"type": "object",
+				"properties": {
+				"Company" : {
+					"type" : "string"
+				  },
+				  "Name" : {
+					"type" : "string"
+				  },
+				  "Surname" : {
+					"type" : "string"
+				  },
+				  "Street" : {
+					"type" : "string"
+				  },
+				  "HomeNo" : {
+					"type" : "string"
+				  },
+				  "Zip" : {
+					"type" : "string"
+				  },
+				  "City" : {
+					"type" : "string"
+				  }
+				}
+			},
+			"Features": {
+				"type": "object",
+				"properties": {
+					"deliveryIns" : {
+					"type" : "string"
+				  },
+				  "price" : {
+					"type" : "string"
+				  },
+				  "currency" : {
+					"type" : "string"
+				  },
+				  "weight" : {
+					"type" : "string"
+				  }
+				}
+			}
         }
       }
     }

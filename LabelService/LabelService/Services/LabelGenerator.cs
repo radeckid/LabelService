@@ -1,10 +1,6 @@
-﻿using LabelService.DTO;
-using LabelService.Helpers;
+﻿using LabelService.Helpers;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Threading.Tasks;
 using LabelService.Models;
 
 namespace LabelService.Services
@@ -18,9 +14,9 @@ namespace LabelService.Services
             _provider = new LabelDataProvider();
         }
 
-        public string Generate(Label label, string identcode)
+        public string Generate(Label label)
         {
-            identcode = identcode.PadLeft(12, '0');
+            string identcode = label.Identcode;
             _provider.Inicialize(label);
             var image = new Bitmap(400, 640);
             using (var graphic = Graphics.FromImage(image))

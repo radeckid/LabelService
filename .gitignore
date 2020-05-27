@@ -4,5 +4,10 @@
 
 /LabelService/.vs/LabelService/v16
 /LabelService/LabelService/LabelService/bin/Debug/netcoreapp3.1/
-/LabelService/LabelService/Migrations
-/LabelService/.vs/LabelService
+/LabelService/LabelService/Migrations/
+/LabelService/.vs/LabelService/
+/LabelService/.idea/
+/LabelService/LabelServiceTests/bin/
+/LabelService/LabelServiceTests/obj/
+/LabelService/LabelService/bin/
+/LabelService/LabelService/obj/
