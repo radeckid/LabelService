@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LabelService.DatabaseContext
 {
-    public class  DataContext : DbContext
+    public class DataContext : DbContext
     {
         public DbSet<Label> Labels { get; set; }
 

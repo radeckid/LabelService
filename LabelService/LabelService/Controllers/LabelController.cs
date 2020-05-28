@@ -1,14 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using LabelPlatform.DTO;
 using LabelService.DatabaseContext;
-using LabelService.DTO;
-using LabelService.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace LabelService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class LabelController : Controller, ILabelController
+    public class LabelController : Controller
     {
         private ILabelRepository _labelRepository;
 
@@ -17,15 +16,15 @@ namespace LabelService.Controllers
             _labelRepository = labelRepository;
         }
 
-        [HttpDelete("delete/{id}")]
-        public async Task<IActionResult> DeleteLabel(string identifier)
+        [HttpDelete("delete/{identcode}")]
+        public async Task<IActionResult> DeleteLabel(string identcode)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest("invalid input, object invalid");
             }
 
-            bool isDeleted = await _labelRepository.DeleteLabel(identifier);
+            bool isDeleted = await _labelRepository.DeleteLabel(identcode);
 
             if (!isDeleted)
             {
@@ -35,7 +34,7 @@ namespace LabelService.Controllers
             return Ok();
         }
 
-        [HttpGet("label/{id}")]
+        [HttpGet("label/{identcode}")]
         public async Task<IActionResult> GetLabel(string identcode)
         {
             if (!ModelState.IsValid || identcode == null)

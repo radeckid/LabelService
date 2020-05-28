@@ -34,6 +34,9 @@ namespace LabelService
             });
 
             services.AddControllers();
+
+
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,12 +50,15 @@ namespace LabelService
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            
+
             app.UseDeveloperExceptionPage();
 
             app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseEndpoints(endpoints =>
             {

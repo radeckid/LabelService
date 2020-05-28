@@ -1,4 +1,4 @@
-﻿using LabelService.DTO;
+﻿using LabelPlatform.DTO;
 using LabelService.Models;
 
 namespace LabelService.Extensions
@@ -16,6 +16,7 @@ namespace LabelService.Extensions
                 HomeNo = dto.HomeNo,
                 Zip = dto.Zip,
                 City = dto.City,
+                Country = dto.Country,
                 Mobile = dto.Mobile,
                 Email = dto.Email
             };

@@ -1,10 +1,9 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using LabelService.DTO;
+﻿using LabelPlatform.DTO;
 using LabelService.Extensions;
 using LabelService.Models;
 using LabelService.Services;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace LabelService.DatabaseContext
 {
@@ -44,7 +43,7 @@ namespace LabelService.DatabaseContext
 
         public async Task<Label> GetLabel(string identcode)
         {
-            return  await _context.Labels.FirstOrDefaultAsync(x => x.Identcode.Equals(identcode));
+            return await _context.Labels.FirstOrDefaultAsync(x => x.Identcode.Equals(identcode));
         }
 
         public async Task<Label> CreateLabel(LabelDTO dto)

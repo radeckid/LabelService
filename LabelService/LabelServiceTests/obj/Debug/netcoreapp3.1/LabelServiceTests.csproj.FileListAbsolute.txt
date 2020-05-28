@@ -424,4 +424,13 @@ D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3
 D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\nunit.core.interfaces.dll
 D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\nunit.util.dll
 D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\testhost.exe
-D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\obj\Debug\netcoreapp3.1\LabelServiceTests.csproj.CoreCompileInputs.cache
+D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\Namotion.Reflection.dll
+D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\NJsonSchema.dll
+D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\NSwag.Annotations.dll
+D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\NSwag.AspNetCore.dll
+D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\NSwag.Core.dll
+D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\NSwag.Generation.dll
+D:\Projekty\C#\LabelService\LabelService\LabelServiceTests\bin\Debug\netcoreapp3.1\NSwag.Generation.AspNetCore.dll

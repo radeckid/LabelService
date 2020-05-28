@@ -1,4 +1,4 @@
-﻿using LabelService.Interfaces;
+﻿using LabelPlatform.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
 namespace LabelService.Models
@@ -12,12 +12,12 @@ namespace LabelService.Models
         public string DeliveryIns { get; set; }
 
         [Required]
-        public string Price { get; set; }
+        public decimal Price { get; set; }
 
         [Required]
         public string Currency { get; set; }
 
         [Required]
-        public string Weight { get; set; }
+        public decimal Weight { get; set; }
     }
 }

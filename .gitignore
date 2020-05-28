@@ -11,3 +11,5 @@
 /LabelService/LabelServiceTests/obj/
 /LabelService/LabelService/bin/
 /LabelService/LabelService/obj/
+/LabelService/LabelService/IntegrationTests2/.vs/
+/LabelService/LabelService/IntegrationTests2/AcceptanceTests/bin/

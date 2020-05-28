@@ -1,7 +1,7 @@
 ﻿using LabelService.Helpers;
+using LabelService.Models;
 using System;
 using System.Drawing;
-using LabelService.Models;
 
 namespace LabelService.Services
 {

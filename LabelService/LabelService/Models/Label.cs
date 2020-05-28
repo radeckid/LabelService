@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using LabelPlatform.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LabelService.Models
 {

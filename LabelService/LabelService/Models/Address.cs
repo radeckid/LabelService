@@ -1,5 +1,4 @@
-﻿using LabelService.Interfaces;
-using LabelService.Types;
+﻿using LabelPlatform.Interfaces;
 using System.ComponentModel.DataAnnotations;
 
 namespace LabelService.Models
@@ -27,6 +26,9 @@ namespace LabelService.Models
 
         [Required]
         public string Zip { get; set; }
+
+        [Required]
+        public string Country { get; set; }
 
         [Required]
         public string City { get; set; }

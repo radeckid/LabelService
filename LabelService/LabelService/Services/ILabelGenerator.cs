@@ -1,6 +1,4 @@
-﻿
-using LabelService.DTO;
-using LabelService.Models;
+﻿using LabelService.Models;
 
 namespace LabelService.Services
 {

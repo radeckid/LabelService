@@ -1,0 +1,8 @@
+D:\Projekty\C#\LabelService\LabelService\LabelPlatform\obj\Debug\netcoreapp3.1\LabelPlatform.csproj.CoreCompileInputs.cache
+D:\Projekty\C#\LabelService\LabelService\LabelPlatform\obj\Debug\netcoreapp3.1\LabelPlatform.AssemblyInfoInputs.cache
+D:\Projekty\C#\LabelService\LabelService\LabelPlatform\obj\Debug\netcoreapp3.1\LabelPlatform.AssemblyInfo.cs
+D:\Projekty\C#\LabelService\LabelService\LabelPlatform\bin\Debug\netcoreapp3.1\LabelPlatform.deps.json
+D:\Projekty\C#\LabelService\LabelService\LabelPlatform\bin\Debug\netcoreapp3.1\LabelPlatform.dll
+D:\Projekty\C#\LabelService\LabelService\LabelPlatform\bin\Debug\netcoreapp3.1\LabelPlatform.pdb
+D:\Projekty\C#\LabelService\LabelService\LabelPlatform\obj\Debug\netcoreapp3.1\LabelPlatform.dll
+D:\Projekty\C#\LabelService\LabelService\LabelPlatform\obj\Debug\netcoreapp3.1\LabelPlatform.pdb

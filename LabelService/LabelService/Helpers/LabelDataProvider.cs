@@ -1,5 +1,4 @@
-﻿using LabelService.Extensions;
-using LabelService.Models;
+﻿using LabelService.Models;
 
 namespace LabelService.Helpers
 {
@@ -8,7 +7,7 @@ namespace LabelService.Helpers
         private Label _label;
 
         public LabelDataProvider()
-        {}
+        { }
 
         public void Inicialize(Label label)
         {
@@ -35,7 +34,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                if (!_label.Sender.Company.IsNullOrWhiteSpace())
+                if (!string.IsNullOrWhiteSpace(_label.Sender.Company))
                 {
                     return _label.Sender.Company;
                 }
@@ -64,7 +63,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                if (!_label.Receiver.Company.IsNullOrWhiteSpace())
+                if (!string.IsNullOrWhiteSpace(_label.Receiver.Company))
                 {
                     return _label.Receiver.Company;
                 }
@@ -77,7 +76,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return _label.Receiver.Mobile.IsNullOrWhiteSpace() ? _label.Receiver.Email.IsNullOrWhiteSpace() ? string.Empty : _label.Receiver.Email : _label.Receiver.Mobile;
+                return string.IsNullOrWhiteSpace(_label.Receiver.Mobile) ? string.IsNullOrWhiteSpace(_label.Receiver.Email) ? string.Empty : _label.Receiver.Email : _label.Receiver.Mobile;
             }
         }
 
@@ -93,7 +92,7 @@ namespace LabelService.Helpers
         {
             get
             {
-                return string.Concat("Price: ", ConnectStringWithSpace(_label.Features.Price, _label.Features.Currency));
+                return string.Concat("Price: ", ConnectStringWithSpace(_label.Features.Price.ToString(), _label.Features.Currency));
             }
         }
 
@@ -101,19 +100,15 @@ namespace LabelService.Helpers
         {
             get
             {
-                if(_label.Features.Weight.IsNullOrWhiteSpace())
-                {
-                    _label.Features.Weight = "0";
-                }
                 return string.Concat("Weight: ", _label.Features.Weight, " kg");
             }
         }
 
         private string ConnectStringWithSpace(string first, string second)
         {
-            if (first.IsNullOrWhiteSpace())
+            if (string.IsNullOrWhiteSpace(first))
             {
-                if (second.IsNullOrWhiteSpace())
+                if (string.IsNullOrWhiteSpace(second))
                 {
                     return string.Empty;
                 }
@@ -121,7 +116,7 @@ namespace LabelService.Helpers
                 return second;
             }
 
-            if (second.IsNullOrWhiteSpace())
+            if (string.IsNullOrWhiteSpace(second))
             {
                 return first;
             }

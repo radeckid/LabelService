@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
-using LabelService.DTO;
+﻿using LabelPlatform.DTO;
 using LabelService.Models;
+using System.Threading.Tasks;
 
 namespace LabelService.DatabaseContext
 {
